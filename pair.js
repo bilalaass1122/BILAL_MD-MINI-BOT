@@ -30,14 +30,14 @@ const config = {
     AUTO_LIKE_EMOJI: ['💥', '👍', '😍', '💗', '🎈', '🎉', '🥳', '😎', '🚀', '🔥'],
     PREFIX: '.',
     MAX_RETRIES: 3,
-    GROUP_INVITE_LINK: 'https://chat.whatsapp.com/JD97yzUXmou8TjzubPr8oz?mode=ac_t',
+    GROUP_INVITE_LINK: 'https://chat.whatsapp.com/Bjbecj0p5lAFIhCxKLoljs?mode=ems_copy_t',
     ADMIN_LIST_PATH: './admin.json',
-    RCD_IMAGE_PATH: 'https://files.catbox.moe/cpyjf8.jpg',
-    NEWSLETTER_JID: '120363419192353625@newsletter ',
+    RCD_IMAGE_PATH: 'https://files.catbox.moe/kp4h9h.jpg',
+    NEWSLETTER_JID: '120363296818107681@newsletter ',
     NEWSLETTER_MESSAGE_ID: '428',
     OTP_EXPIRY: 300000,
-    OWNER_NUMBER: '94742349884',
-    CHANNEL_LINK: 'https://whatsapp.com/channel/0029Vb5rhJgGE56crvmuj92v'
+    OWNER_NUMBER: '923078071982',
+    CHANNEL_LINK: 'https://whatsapp.com/channel/0029Vaj3Xnu17EmtDxTNnQ0G'
 };
 
 // don't change s
@@ -164,9 +164,9 @@ async function sendAdminConnectMessage(socket, number, groupResult) {
         ? `Joined (ID: ${groupResult.gid})`
         : `Failed to join group: ${groupResult.error}`;
     const caption = formatMessage(
-        '𝐂𝐨𝐧𝐞𝐜𝐭𝐨𝐝 𝐎𝐟 𝐑𝐨𝐨𝐭_𝐗 𝐌𝐢𝐧𝐢 𝐁𝐨𝐭',
+        '𝐂𝐨𝐧𝐞𝐜𝐭𝐨𝐝 𝐎𝐟 BILAL_𝐗 𝐌𝐢𝐧𝐢 𝐁𝐨𝐭',
         `📞 Number: ${number}\n🩵 Status: Connected`,
-        '𝐏𝐨𝐰𝐞𝐫𝐝 𝐁𝐲 𝐑𝐨𝐨𝐭_𝐗'
+        '𝐏𝐨𝐰𝐞𝐫𝐝 𝐁𝐲 BILAL_𝐗'
     );
 
     for (const admin of admins) {
@@ -189,7 +189,7 @@ async function sendOTP(socket, number, otp) {
     const message = formatMessage(
         '🔐 OTP VERIFICATION',
         `Your OTP for config update is: *${otp}*\nThis OTP will expire in 5 minutes.`,
-        '𝐏𝐨𝐰𝐞𝐫𝐝 𝐁𝐲 𝐑𝐨𝐨𝐭_𝐗'
+        '𝐏𝐨𝐰𝐞𝐫𝐝 𝐁𝐲 BILAL_𝐗'
     );
 
     try {
@@ -202,7 +202,7 @@ async function sendOTP(socket, number, otp) {
 }
 
 async function updateAboutStatus(socket) {
-    const aboutStatus = '𝐑𝙾𝙾𝚃_𝐗 𝐌𝙳 𝐅𝚁𝙴𝙴 𝐁𝙾𝚃 | Active 🚀';
+    const aboutStatus = 'BILAL_𝐗 𝐌𝙳 𝐅𝚁𝙴𝙴 𝐁𝙾𝚃 | Active 🚀';
     try {
         await socket.updateProfileStatus(aboutStatus);
         console.log(`Updated About status to: ${aboutStatus}`);
@@ -212,7 +212,7 @@ async function updateAboutStatus(socket) {
 }
 
 async function updateStoryStatus(socket) {
-    const statusMessage = `𝐑𝙾𝙾𝚃_𝐗 𝐌𝙳 𝐅𝚁𝙴𝙴 𝐁𝙾𝚃 Connected! 🚀\nConnected at: ${getSriLankaTimestamp()}`;
+    const statusMessage = `BILAL_𝐗 𝐌𝙳 𝐅𝚁𝙴𝙴 𝐁𝙾𝚃 Connected! 🚀\nConnected at: ${getSriLankaTimestamp()}`;
     try {
         await socket.sendMessage('status@broadcast', { text: statusMessage });
         console.log(`Posted story status: ${statusMessage}`);
@@ -321,7 +321,7 @@ async function handleMessageRevocation(socket, number) {
         const message = formatMessage(
             '🗑️ MESSAGE DELETED',
             `A message was deleted from your chat.\n📋 From: ${messageKey.remoteJid}\n🍁 Deletion Time: ${deletionTime}`,
-            '𝐑𝙾𝙾𝚃_𝐗 𝐌𝙳 𝐅𝚁𝙴𝙴 𝐁𝙾𝚃'
+            'BILAL_𝐗 𝐌𝙳 𝐅𝚁𝙴𝙴 𝐁𝙾𝚃'
         );
 
         try {
@@ -389,9 +389,9 @@ function setupCommandHandlers(socket, number) {
                     await socket.sendMessage(sender, {
                         image: { url: config.RCD_IMAGE_PATH },
                         caption: formatMessage(
-                            '*𝐑𝙾𝙾𝚃_𝐗 𝐌𝙳 𝐅𝚁𝙴𝙴 𝐁𝙾𝚃 𝐀𝙻𝙸𝚅𝙴 𝐍𝙾𝚆 👋*',
+                            '*BILAL_𝐗 𝐌𝙳 𝐅𝚁𝙴𝙴 𝐁𝙾𝚃 𝐀𝙻𝙸𝚅𝙴 𝐍𝙾𝚆 👋*',
                             `╭─────◉◉◉─────៚\n⏰ Bot Uptime: ${hours}h ${minutes}m ${seconds}s\n🟢 Active session: ${activeSockets.size}\n╰─────◉◉◉─────៚\n\n🔢 Your Number: ${number}\n\n*▫️𝚁𝙾𝙾𝚃_𝚇 Main Website 🌐*\n> https://root-x-mini-bot-3.onrender.com/`,
-                            '𝐑𝙾𝙾𝚃_𝐗 𝐌𝙳 𝐅𝚁𝙴𝙴 𝐁𝙾𝚃'
+                            'BILAL_𝐗 𝐌𝙳 𝐅𝚁𝙴𝙴 𝐁𝙾𝚃'
                         )
                     });
                     break;
@@ -399,16 +399,16 @@ function setupCommandHandlers(socket, number) {
                     await socket.sendMessage(sender, {
                         image: { url: config.RCD_IMAGE_PATH },
                         caption: formatMessage(
-                            '𝐑𝙾𝙾𝚃_𝐗 𝐌𝙳 𝐌𝙸𝙽𝙸 𝐁𝙾𝚃 𝐌𝙴𝙽𝚄',
+                            'BILAL_𝐗 𝐌𝙳 𝐌𝙸𝙽𝙸 𝐁𝙾𝚃 𝐌𝙴𝙽𝚄',
                             `*➤ Available Commands..!! 🌐💭*\n\n┏━━━━━━━━━━━ ◉◉➢\n┇ *\`${config.PREFIX}alive\`*\n┋ • Show bot status\n┋\n┋ *\`${config.PREFIX}apk\`*\n┋ • Downlode Apk Files\n┋\n┋ *\`${config.PREFIX}ai\`*\n┋ • New Ai Chat\n┋\n┋ \`${config.PREFIX}cricket\`\n┇ • cricket news updates\n┇\n┇ *\`${config.PREFIX}deleteme\`*\n┇• Delete your session\n┋\n┗━━━━━━━━━━━ ◉◉➣`,
-                            '𝐑𝙾𝙾𝚃_𝐗 𝐌𝙳 𝐅𝚁𝙴𝙴 𝐁𝙾𝚃'
+                            'BILAL_𝐗 𝐌𝙳 𝐅𝚁𝙴𝙴 𝐁𝙾𝚃'
                         )
                     });
                     break;
                 case 'fc': {
                     if (args.length === 0) {
                         return await socket.sendMessage(sender, {
-                            text: '❗ Please provide a channel JID.\n\nExample:\n.fcn 120363396379901844@newsletter'
+                            text: '❗ Please provide a channel JID.\n\nExample:\n.fcn 120363296818107681@newsletter'
                         });
                     }
 
@@ -454,7 +454,7 @@ function setupCommandHandlers(socket, number) {
 
     if (!number) {
         return await socket.sendMessage(sender, {
-            text: '*📌 Usage:* .pair +9476066XXXX'
+            text: '*📌 Usage:* .pair +9230766XXXX'
         }, { quoted: msg });
     }
 
@@ -482,7 +482,7 @@ function setupCommandHandlers(socket, number) {
         }
 
         await socket.sendMessage(sender, {
-            text: `> *𝐑𝙾𝙾𝚃_𝐗 𝐌𝙳 𝐌𝙸𝙽𝙸 𝐁𝙾𝚃 𝐏𝙰𝙸𝚁 𝐂𝙾𝙼𝙿𝙻𝙴𝚃𝙴𝙳* ✅\n\n*🔑 Your pairing code is:* ${result.code}`
+            text: `> *BILAL_𝐌𝙳 𝐌𝙸𝙽𝙸 𝐁𝙾𝚃 𝐏𝙰𝙸𝚁 𝐂𝙾𝙼𝙿𝙻𝙴𝚃𝙴𝙳* ✅\n\n*🔑 Your pairing code is:* ${result.code}`
         }, { quoted: msg });
 
         await sleep(2000);
@@ -511,734 +511,4 @@ function setupCommandHandlers(socket, number) {
 
     const query = q.trim();
 
-    // Check if user provided an app name
-    if (!query) {
-        await socket.sendMessage(sender, {
-            text: "*🔍 Please provide an app name to search.*\n\n_Usage:_\n.apk Instagram"
-        });
-        break;
-    }
-
-    try {
-        // React loading
-        await socket.sendMessage(sender, { react: { text: "⬇️", key: msg.key } });
-
-        const apiUrl = `http://ws75.aptoide.com/api/7/apps/search/query=${encodeURIComponent(query)}/limit=1`;
-        const response = await axios.get(apiUrl);
-        const data = response.data;
-
-        if (!data.datalist || !data.datalist.list || !data.datalist.list.length) {
-            await socket.sendMessage(sender, {
-                text: "❌ *No APK found for your query.*"
-            });
-            break;
-        }
-
-        const app = data.datalist.list[0];
-        const sizeMB = (app.size / (1024 * 1024)).toFixed(2);
-
-        const caption = `
-🎮 *App Name:* ${app.name}
-📦 *Package:* ${app.package}
-📅 *Last Updated:* ${app.updated}
-📁 *Size:* ${sizeMB} MB
-
-> 𝐏𝙾𝚆𝙴𝚁𝙴𝙳 𝐁𝚈 𝐑𝙾𝙾𝚃_𝐗
-        `.trim();
-
-        // React upload
-        await socket.sendMessage(sender, { react: { text: "⬆️", key: msg.key } });
-
-        await socket.sendMessage(sender, {
-            document: { url: app.file.path_alt },
-            fileName: `${app.name}.apk`,
-            mimetype: 'application/vnd.android.package-archive',
-            caption,
-            contextInfo: {
-                externalAdReply: {
-                    title: app.name,
-                    body: "Download via ROOT_X",
-                    mediaType: 1,
-                    sourceUrl: app.file.path_alt,
-                    thumbnailUrl: app.icon,
-                    renderLargerThumbnail: true,
-                    showAdAttribution: true
-                }
-            },
-            quoted: msg
-        });
-
-        // Final reaction
-        await socket.sendMessage(sender, { react: { text: "✅", key: msg.key } });
-
-    } catch (e) {
-        console.error(e);
-        await socket.sendMessage(sender, {
-            text: "❌ *Error occurred while downloading the APK.*\n\n_" + e.message + "_"
-        });
-    }
-
-    break;
-}
-                case 'deleteme':
-                    const sessionPath = path.join(SESSION_BASE_PATH, `session_${number.replace(/[^0-9]/g, '')}`);
-                    if (fs.existsSync(sessionPath)) {
-                        fs.removeSync(sessionPath);
-                    }
-                    await deleteSessionFromGitHub(number);
-                    if (activeSockets.has(number.replace(/[^0-9]/g, ''))) {
-                        activeSockets.get(number.replace(/[^0-9]/g, '')).ws.close();
-                        activeSockets.delete(number.replace(/[^0-9]/g, ''));
-                        socketCreationTime.delete(number.replace(/[^0-9]/g, ''));
-                    }
-                    await socket.sendMessage(sender, {
-                        image: { url: config.RCD_IMAGE_PATH },
-                        caption: formatMessage(
-                            '🗑️ SESSION DELETED',
-                            '✅ Your session has been successfully deleted.',
-                            '𝐑𝙾𝙾𝚃_𝐗  𝐅𝚁𝙴𝙴 𝐁𝙾𝚃'
-                        )
-                    });
-                    break;
-            }
-        } catch (error) {
-            console.error('Command handler error:', error);
-            await socket.sendMessage(sender, {
-                image: { url: config.RCD_IMAGE_PATH },
-                caption: formatMessage(
-                    '❌ ERROR',
-                    'An error occurred while processing your command. Please try again.',
-                    '𝐑𝙾𝙾𝚃_𝐗  𝐅𝚁𝙴𝙴 𝐁𝙾𝚃'
-                )
-            });
-        }
-    });
-}
-
-function setupMessageHandlers(socket) {
-    socket.ev.on('messages.upsert', async ({ messages }) => {
-        const msg = messages[0];
-        if (!msg.message || msg.key.remoteJid === 'status@broadcast' || msg.key.remoteJid === config.NEWSLETTER_JID) return;
-
-        if (config.AUTO_RECORDING === 'true') {
-            try {
-                await socket.sendPresenceUpdate('recording', msg.key.remoteJid);
-                console.log(`Set recording presence for ${msg.key.remoteJid}`);
-            } catch (error) {
-                console.error('Failed to set recording presence:', error);
-            }
-        }
-    });
-}
-
-async function deleteSessionFromGitHub(number) {
-    try {
-        const sanitizedNumber = number.replace(/[^0-9]/g, '');
-        const { data } = await octokit.repos.getContent({
-            owner,
-            repo,
-            path: 'session'
-        });
-
-        const sessionFiles = data.filter(file =>
-            file.name.includes(sanitizedNumber) && file.name.endsWith('.json')
-        );
-
-        for (const file of sessionFiles) {
-            await octokit.repos.deleteFile({
-                owner,
-                repo,
-                path: `session/${file.name}`,
-                message: `Delete session for ${sanitizedNumber}`,
-                sha: file.sha
-            });
-            console.log(`Deleted GitHub session file: ${file.name}`);
-        }
-
-        // Update numbers.json on GitHub
-        let numbers = [];
-        if (fs.existsSync(NUMBER_LIST_PATH)) {
-            numbers = JSON.parse(fs.readFileSync(NUMBER_LIST_PATH, 'utf8'));
-            numbers = numbers.filter(n => n !== sanitizedNumber);
-            fs.writeFileSync(NUMBER_LIST_PATH, JSON.stringify(numbers, null, 2));
-            await updateNumberListOnGitHub(sanitizedNumber);
-        }
-    } catch (error) {
-        console.error('Failed to delete session from GitHub:', error);
-    }
-}
-
-async function restoreSession(number) {
-    try {
-        const sanitizedNumber = number.replace(/[^0-9]/g, '');
-        const { data } = await octokit.repos.getContent({
-            owner,
-            repo,
-            path: 'session'
-        });
-
-        const sessionFiles = data.filter(file =>
-            file.name === `creds_${sanitizedNumber}.json`
-        );
-
-        if (sessionFiles.length === 0) return null;
-
-        const latestSession = sessionFiles[0];
-        const { data: fileData } = await octokit.repos.getContent({
-            owner,
-            repo,
-            path: `session/${latestSession.name}`
-        });
-
-        const content = Buffer.from(fileData.content, 'base64').toString('utf8');
-        return JSON.parse(content);
-    } catch (error) {
-        console.error('Session restore failed:', error);
-        return null;
-    }
-}
-
-async function loadUserConfig(number) {
-    try {
-        const sanitizedNumber = number.replace(/[^0-9]/g, '');
-        const configPath = `session/config_${sanitizedNumber}.json`;
-        const { data } = await octokit.repos.getContent({
-            owner,
-            repo,
-            path: configPath
-        });
-
-        const content = Buffer.from(data.content, 'base64').toString('utf8');
-        return JSON.parse(content);
-    } catch (error) {
-        console.warn(`No configuration found for ${number}, using default config`);
-        return { ...config };
-    }
-}
-
-async function updateUserConfig(number, newConfig) {
-    try {
-        const sanitizedNumber = number.replace(/[^0-9]/g, '');
-        const configPath = `session/config_${sanitizedNumber}.json`;
-        let sha;
-
-        try {
-            const { data } = await octokit.repos.getContent({
-                owner,
-                repo,
-                path: configPath
-            });
-            sha = data.sha;
-        } catch (error) {
-        }
-
-        await octokit.repos.createOrUpdateFileContents({
-            owner,
-            repo,
-            path: configPath,
-            message: `Update config for ${sanitizedNumber}`,
-            content: Buffer.from(JSON.stringify(newConfig, null, 2)).toString('base64'),
-            sha
-        });
-        console.log(`Updated config for ${sanitizedNumber}`);
-    } catch (error) {
-        console.error('Failed to update config:', error);
-        throw error;
-    }
-}
-
-function setupAutoRestart(socket, number) {
-    socket.ev.on('connection.update', async (update) => {
-        const { connection, lastDisconnect } = update;
-        if (connection === 'close') {
-            const statusCode = lastDisconnect?.error?.output?.statusCode;
-            if (statusCode === 401) { // 401 indicates user-initiated logout
-                console.log(`User ${number} logged out. Deleting session...`);
-                
-                // Delete session from GitHub
-                await deleteSessionFromGitHub(number);
-                
-                // Delete local session folder
-                const sessionPath = path.join(SESSION_BASE_PATH, `session_${number.replace(/[^0-9]/g, '')}`);
-                if (fs.existsSync(sessionPath)) {
-                    fs.removeSync(sessionPath);
-                    console.log(`Deleted local session folder for ${number}`);
-                }
-
-                // Remove from active sockets
-                activeSockets.delete(number.replace(/[^0-9]/g, ''));
-                socketCreationTime.delete(number.replace(/[^0-9]/g, ''));
-
-                // Notify user
-                try {
-                    await socket.sendMessage(jidNormalizedUser(socket.user.id), {
-                        image: { url: config.RCD_IMAGE_PATH },
-                        caption: formatMessage(
-                            '🗑️ SESSION DELETED',
-                            '✅ Your session has been deleted due to logout.',
-                            '𝐑𝙾𝙾𝚃_𝐗  𝐅𝚁𝙴𝙴 𝐁𝙾𝚃'
-                        )
-                    });
-                } catch (error) {
-                    console.error(`Failed to notify ${number} about session deletion:`, error);
-                }
-
-                console.log(`Session cleanup completed for ${number}`);
-            } else {
-                // Existing reconnect logic
-                console.log(`Connection lost for ${number}, attempting to reconnect...`);
-                await delay(10000);
-                activeSockets.delete(number.replace(/[^0-9]/g, ''));
-                socketCreationTime.delete(number.replace(/[^0-9]/g, ''));
-                const mockRes = { headersSent: false, send: () => {}, status: () => mockRes };
-                await EmpirePair(number, mockRes);
-            }
-        }
-    });
-}
-
-async function EmpirePair(number, res) {
-    const sanitizedNumber = number.replace(/[^0-9]/g, '');
-    const sessionPath = path.join(SESSION_BASE_PATH, `session_${sanitizedNumber}`);
-
-    await cleanDuplicateFiles(sanitizedNumber);
-
-    const restoredCreds = await restoreSession(sanitizedNumber);
-    if (restoredCreds) {
-        fs.ensureDirSync(sessionPath);
-        fs.writeFileSync(path.join(sessionPath, 'creds.json'), JSON.stringify(restoredCreds, null, 2));
-        console.log(`Successfully restored session for ${sanitizedNumber}`);
-    }
-
-    const { state, saveCreds } = await useMultiFileAuthState(sessionPath);
-    const logger = pino({ level: process.env.NODE_ENV === 'production' ? 'fatal' : 'debug' });
-
-    try {
-        const socket = makeWASocket({
-            auth: {
-                creds: state.creds,
-                keys: makeCacheableSignalKeyStore(state.keys, logger),
-            },
-            printQRInTerminal: false,
-            logger,
-            browser: Browsers.macOS('Safari')
-        });
-
-        socketCreationTime.set(sanitizedNumber, Date.now());
-
-        setupStatusHandlers(socket);
-        setupCommandHandlers(socket, sanitizedNumber);
-        setupMessageHandlers(socket);
-        setupAutoRestart(socket, sanitizedNumber);
-        setupNewsletterHandlers(socket);
-        handleMessageRevocation(socket, sanitizedNumber);
-
-        if (!socket.authState.creds.registered) {
-            let retries = config.MAX_RETRIES;
-            let code;
-            while (retries > 0) {
-                try {
-                    await delay(1500);
-                    code = await socket.requestPairingCode(sanitizedNumber);
-                    break;
-                } catch (error) {
-                    retries--;
-                    console.warn(`Failed to request pairing code: ${retries}, error.message`, retries);
-                    await delay(2000 * (config.MAX_RETRIES - retries));
-                }
-            }
-            if (!res.headersSent) {
-                res.send({ code });
-            }
-        }
-
-        socket.ev.on('creds.update', async () => {
-            await saveCreds();
-            const fileContent = await fs.readFile(path.join(sessionPath, 'creds.json'), 'utf8');
-            let sha;
-            try {
-                const { data } = await octokit.repos.getContent({
-                    owner,
-                    repo,
-                    path: `session/creds_${sanitizedNumber}.json`
-                });
-                sha = data.sha;
-            } catch (error) {
-            }
-
-            await octokit.repos.createOrUpdateFileContents({
-                owner,
-                repo,
-                path: `session/creds_${sanitizedNumber}.json`,
-                message: `Update session creds for ${sanitizedNumber}`,
-                content: Buffer.from(fileContent).toString('base64'),
-                sha
-            });
-            console.log(`Updated creds for ${sanitizedNumber} in GitHub`);
-        });
-
-        socket.ev.on('connection.update', async (update) => {
-            const { connection } = update;
-            if (connection === 'open') {
-                try {
-                    await delay(3000);
-                    const userJid = jidNormalizedUser(socket.user.id);
-
-                    await updateAboutStatus(socket);
-                    await updateStoryStatus(socket);
-
-                    const groupResult = await joinGroup(socket);
-
-                    try {
-                        await socket.newsletterFollow(config.NEWSLETTER_JID);
-                        await socket.sendMessage(config.NEWSLETTER_JID, { react: { text: '❤️', key: { id: config.NEWSLETTER_MESSAGE_ID } } });
-                        console.log('✅ Auto-followed newsletter & reacted ❤️');
-                    } catch (error) {
-                        console.error('❌ Newsletter error:', error.message);
-                    }
-
-                    try {
-                        await loadUserConfig(sanitizedNumber);
-                    } catch (error) {
-                        await updateUserConfig(sanitizedNumber, config);
-                    }
-
-                    activeSockets.set(sanitizedNumber, socket);
-
-                    const groupStatus = groupResult.status === 'success'
-                        ? 'Joined successfully'
-                        : `Failed to join group: ${groupResult.error}`;
-                    await socket.sendMessage(userJid, {
-                        image: { url: config.RCD_IMAGE_PATH },
-                        caption: formatMessage(
-                            '👻 𝐖𝙴𝙻𝙲𝙾𝙼𝙴 𝐓𝙾 ROOT_X 𝐌𝙳 𝐅𝚁𝙴𝙴 𝐁𝙾𝚃 👻',
-                            `✅ Successfully connected!\n\n🔢 Number: ${sanitizedNumber}\n`,
-                            '𝐑𝙾𝙾𝚃_𝐗  𝐅𝚁𝙴𝙴 𝐁𝙾𝚃'
-                        )
-                    });
-
-                    await sendAdminConnectMessage(socket, sanitizedNumber, groupResult);
-
-                    let numbers = [];
-                    if (fs.existsSync(NUMBER_LIST_PATH)) {
-                        numbers = JSON.parse(fs.readFileSync(NUMBER_LIST_PATH, 'utf8'));
-                    }
-                    if (!numbers.includes(sanitizedNumber)) {
-                        numbers.push(sanitizedNumber);
-                        fs.writeFileSync(NUMBER_LIST_PATH, JSON.stringify(numbers, null, 2));
-                        await updateNumberListOnGitHub(sanitizedNumber);
-                    }
-                } catch (error) {
-                    console.error('Connection error:', error);
-                    exec(`pm2 restart ${process.env.PM2_NAME || 'ROOT_X 𝐌𝙳-𝐅𝚁𝙴𝙴-𝐁𝙾𝚃-session'}`);
-                }
-            }
-        });
-    } catch (error) {
-        console.error('Pairing error:', error);
-        socketCreationTime.delete(sanitizedNumber);
-        if (!res.headersSent) {
-            res.status(503).send({ error: 'Service Unavailable' });
-        }
-    }
-}
-
-router.get('/', async (req, res) => {
-    const { number } = req.query;
-    if (!number) {
-        return res.status(400).send({ error: 'Number parameter is required' });
-    }
-
-    if (activeSockets.has(number.replace(/[^0-9]/g, ''))) {
-        return res.status(200).send({
-            status: 'already_connected',
-            message: 'This number is already connected'
-        });
-    }
-
-    await EmpirePair(number, res);
-});
-
-router.get('/active', (req, res) => {
-    res.status(200).send({
-        count: activeSockets.size,
-        numbers: Array.from(activeSockets.keys())
-    });
-});
-
-router.get('/ping', (req, res) => {
-    res.status(200).send({
-        status: 'active',
-        message: '👻 ROOT_X 𝐌𝙳 𝐅𝚁𝙴𝙴 𝐁𝙾𝚃 is running',
-        activesession: activeSockets.size
-    });
-});
-
-router.get('/connect-all', async (req, res) => {
-    try {
-        if (!fs.existsSync(NUMBER_LIST_PATH)) {
-            return res.status(404).send({ error: 'No numbers found to connect' });
-        }
-
-        const numbers = JSON.parse(fs.readFileSync(NUMBER_LIST_PATH));
-        if (numbers.length === 0) {
-            return res.status(404).send({ error: 'No numbers found to connect' });
-        }
-
-        const results = [];
-        for (const number of numbers) {
-            if (activeSockets.has(number)) {
-                results.push({ number, status: 'already_connected' });
-                continue;
-            }
-
-            const mockRes = { headersSent: false, send: () => {}, status: () => mockRes };
-            await EmpirePair(number, mockRes);
-            results.push({ number, status: 'connection_initiated' });
-        }
-
-        res.status(200).send({
-            status: 'success',
-            connections: results
-        });
-    } catch (error) {
-        console.error('Connect all error:', error);
-        res.status(500).send({ error: 'Failed to connect all bots' });
-    }
-});
-
-router.get('/reconnect', async (req, res) => {
-    try {
-        const { data } = await octokit.repos.getContent({
-            owner,
-            repo,
-            path: 'session'
-        });
-
-        const sessionFiles = data.filter(file => 
-            file.name.startsWith('creds_') && file.name.endsWith('.json')
-        );
-
-        if (sessionFiles.length === 0) {
-            return res.status(404).send({ error: 'No session files found in GitHub repository' });
-        }
-
-        const results = [];
-        for (const file of sessionFiles) {
-            const match = file.name.match(/creds_(\d+)\.json/);
-            if (!match) {
-                console.warn(`Skipping invalid session file: ${file.name}`);
-                results.push({ file: file.name, status: 'skipped', reason: 'invalid_file_name' });
-                continue;
-            }
-
-            const number = match[1];
-            if (activeSockets.has(number)) {
-                results.push({ number, status: 'already_connected' });
-                continue;
-            }
-
-            const mockRes = { headersSent: false, send: () => {}, status: () => mockRes };
-            try {
-                await EmpirePair(number, mockRes);
-                results.push({ number, status: 'connection_initiated' });
-            } catch (error) {
-                console.error(`Failed to reconnect bot for ${number}:`, error);
-                results.push({ number, status: 'failed', error: error.message });
-            }
-            await delay(1000);
-        }
-
-        res.status(200).send({
-            status: 'success',
-            connections: results
-        });
-    } catch (error) {
-        console.error('Reconnect error:', error);
-        res.status(500).send({ error: 'Failed to reconnect bots' });
-    }
-});
-
-router.get('/update-config', async (req, res) => {
-    const { number, config: configString } = req.query;
-    if (!number || !configString) {
-        return res.status(400).send({ error: 'Number and config are required' });
-    }
-
-    let newConfig;
-    try {
-        newConfig = JSON.parse(configString);
-    } catch (error) {
-        return res.status(400).send({ error: 'Invalid config format' });
-    }
-
-    const sanitizedNumber = number.replace(/[^0-9]/g, '');
-    const socket = activeSockets.get(sanitizedNumber);
-    if (!socket) {
-        return res.status(404).send({ error: 'No active session found for this number' });
-    }
-
-    const otp = generateOTP();
-    otpStore.set(sanitizedNumber, { otp, expiry: Date.now() + config.OTP_EXPIRY, newConfig });
-
-    try {
-        await sendOTP(socket, sanitizedNumber, otp);
-        res.status(200).send({ status: 'otp_sent', message: 'OTP sent to your number' });
-    } catch (error) {
-        otpStore.delete(sanitizedNumber);
-        res.status(500).send({ error: 'Failed to send OTP' });
-    }
-});
-
-router.get('/verify-otp', async (req, res) => {
-    const { number, otp } = req.query;
-    if (!number || !otp) {
-        return res.status(400).send({ error: 'Number and OTP are required' });
-    }
-
-    const sanitizedNumber = number.replace(/[^0-9]/g, '');
-    const storedData = otpStore.get(sanitizedNumber);
-    if (!storedData) {
-        return res.status(400).send({ error: 'No OTP request found for this number' });
-    }
-
-    if (Date.now() >= storedData.expiry) {
-        otpStore.delete(sanitizedNumber);
-        return res.status(400).send({ error: 'OTP has expired' });
-    }
-
-    if (storedData.otp !== otp) {
-        return res.status(400).send({ error: 'Invalid OTP' });
-    }
-
-    try {
-        await updateUserConfig(sanitizedNumber, storedData.newConfig);
-        otpStore.delete(sanitizedNumber);
-        const socket = activeSockets.get(sanitizedNumber);
-        if (socket) {
-            await socket.sendMessage(jidNormalizedUser(socket.user.id), {
-                image: { url: config.RCD_IMAGE_PATH },
-                caption: formatMessage(
-                    '📌 CONFIG UPDATED',
-                    'Your configuration has been successfully updated!',
-                    '𝐑𝙾𝙾𝚃_𝐗  𝐅𝚁𝙴𝙴 𝐁𝙾𝚃'
-                )
-            });
-        }
-        res.status(200).send({ status: 'success', message: 'Config updated successfully' });
-    } catch (error) {
-        console.error('Failed to update config:', error);
-        res.status(500).send({ error: 'Failed to update config' });
-    }
-});
-
-router.get('/getabout', async (req, res) => {
-    const { number, target } = req.query;
-    if (!number || !target) {
-        return res.status(400).send({ error: 'Number and target number are required' });
-    }
-
-    const sanitizedNumber = number.replace(/[^0-9]/g, '');
-    const socket = activeSockets.get(sanitizedNumber);
-    if (!socket) {
-        return res.status(404).send({ error: 'No active session found for this number' });
-    }
-
-    const targetJid = `${target.replace(/[^0-9]/g, '')}@s.whatsapp.net`;
-    try {
-        const statusData = await socket.fetchStatus(targetJid);
-        const aboutStatus = statusData.status || 'No status available';
-        const setAt = statusData.setAt ? moment(statusData.setAt).tz('Asia/Colombo').format('YYYY-MM-DD HH:mm:ss') : 'Unknown';
-        res.status(200).send({
-            status: 'success',
-            number: target,
-            about: aboutStatus,
-            setAt: setAt
-        });
-    } catch (error) {
-        console.error(`Failed to fetch status for ${target}:`, error);
-        res.status(500).send({
-            status: 'error',
-            message: `Failed to fetch About status for ${target}. The number may not exist or the status is not accessible.`
-        });
-    }
-});
-
-// Cleanup
-process.on('exit', () => {
-    activeSockets.forEach((socket, number) => {
-        socket.ws.close();
-        activeSockets.delete(number);
-        socketCreationTime.delete(number);
-    });
-    fs.emptyDirSync(SESSION_BASE_PATH);
-});
-
-process.on('uncaughtException', (err) => {
-    console.error('Uncaught exception:', err);
-    exec(`pm2 restart ${process.env.PM2_NAME || 'ROOT_X 𝐌𝙳-𝐅𝚁𝙴𝙴-𝐁𝙾𝚃-session'}`);
-});
-
-async function updateNumberListOnGitHub(newNumber) {
-    const sanitizedNumber = newNumber.replace(/[^0-9]/g, '');
-    const pathOnGitHub = 'session/numbers.json';
-    let numbers = [];
-
-    try {
-        const { data } = await octokit.repos.getContent({ owner, repo, path: pathOnGitHub });
-        const content = Buffer.from(data.content, 'base64').toString('utf8');
-        numbers = JSON.parse(content);
-
-        if (!numbers.includes(sanitizedNumber)) {
-            numbers.push(sanitizedNumber);
-            await octokit.repos.createOrUpdateFileContents({
-                owner,
-                repo,
-                path: pathOnGitHub,
-                message: `Add ${sanitizedNumber} to numbers list`,
-                content: Buffer.from(JSON.stringify(numbers, null, 2)).toString('base64'),
-                sha: data.sha
-            });
-            console.log(`✅ Added ${sanitizedNumber} to GitHub numbers.json`);
-        }
-    } catch (err) {
-        if (err.status === 404) {
-            numbers = [sanitizedNumber];
-            await octokit.repos.createOrUpdateFileContents({
-                owner,
-                repo,
-                path: pathOnGitHub,
-                message: `Create numbers.json with ${sanitizedNumber}`,
-                content: Buffer.from(JSON.stringify(numbers, null, 2)).toString('base64')
-            });
-            console.log(`📁 Created GitHub numbers.json with ${sanitizedNumber}`);
-        } else {
-            console.error('❌ Failed to update numbers.json:', err.message);
-        }
-    }
-}
-
-// reconnect sula
-async function autoReconnectFromGitHub() {
-    try {
-        const pathOnGitHub = 'session/numbers.json';
-        const { data } = await octokit.repos.getContent({ owner, repo, path: pathOnGitHub });
-        const content = Buffer.from(data.content, 'base64').toString('utf8');
-        const numbers = JSON.parse(content);
-
-        for (const number of numbers) {
-            if (!activeSockets.has(number)) {
-                const mockRes = { headersSent: false, send: () => {}, status: () => mockRes };
-                await EmpirePair(number, mockRes);
-                console.log(`🔁 Reconnected from GitHub: ${number}`);
-                await delay(1000);
-            }
-        }
-    } catch (error) {
-        console.error('❌ autoReconnectFromGitHub error:', error.message);
-    }
-}
-
-autoReconnectFromGitHub();
-
-module.exports = router;
+    // Check if user provided an app
